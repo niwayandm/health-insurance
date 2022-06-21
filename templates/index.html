@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <meta name="description" content="" />
+    <meta name="author" content="" />
+    <title>Veace Life - Health Insurance</title>
+    <!-- Favicon-->
+    <link rel="icon" type="image/x-icon" href="{{ url_for('static',filename='assets/favicon.ico') }}" />
+    <!-- Font Awesome icons (free version)-->
+    <script src="https://use.fontawesome.com/releases/v5.15.4/js/all.js" crossorigin="anonymous"></script>
+    <!-- Google fonts-->
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css" />
+    <link href="https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic" rel="stylesheet"
+        type="text/css" />
+    <!-- Core theme CSS (includes Bootstrap)-->
+    <link href="{{ url_for('static',filename='css/styles.css') }}" rel="stylesheet" />
+</head>
+
+<body id="page-top">
+    <!-- Navigation-->
+    <nav class="navbar navbar-expand-lg bg-secondary text-uppercase fixed-top" id="mainNav">
+        <div class="container">
+            <!-- <a class="navbar-brand" href="#page-top">Start Bootstrap</a> -->
+            <button class="navbar-toggler text-uppercase font-weight-bold bg-primary text-white rounded" type="button"
+                data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive"
+                aria-expanded="false" aria-label="Toggle navigation">
+                Menu
+                <i class="fas fa-bars"></i>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarResponsive">
+                <img src="{{url_for('static', filename='assets/img/logo.png')}}"
+                    style="width:150px;margin-bottom:-33px;margin-top:-25px;" class="navbar-nav ml-auto">
+                <h4 class="navbar-nav ms-auto">Health Insurance</h4>
+                <!-- <ul class="navbar-nav ms-auto">
+                        <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded" href="#portfolio">Portfolio</a></li>
+                        <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded" href="#about">About</a></li>
+                        <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded" href="#contact">Contact</a></li>
+                    </ul> -->
+            </div>
+        </div>
+    </nav>
+    <!-- Masthead-->
+    <header class="masthead bg-primary text-white text-center">
+        <div class="container d-flex align-items-center flex-column">
+            <br>
+            <br>
+            <br>
+            <br><br>
+            <br>
+            <br>
+            <br><br>
+            <br>
+            <br>
+            <br><br>
+
+
+        </div>
+    </header>
+    <!-- FORM Section-->
+    <section class="page-section portfolio" id="portfolio" style="background: #FF8966;">
+        <div class="container" style="text-align: center;">
+            <p class="myFont">Veace Life helps you predict your health insurance premiums based on your current data</p>
+            <p class="myFont2">Find out your premiums now! </p>
+            <button type="button" href="#form_classify" class="btn-Mine">Fill the form</button>
+
+        </div>
+    </section>
+
+    <!-- CLASSIFY Section-->
+    <section class="page-section" id="form_classify">
+        <div class="container" style="text-align:center;">
+            <!-- Contact Section Heading-->
+            <h4 class="myFont2 mb-0" style="color:#000;font-size:35px;">Classify your health</h4>
+            <h4 class="myFont2 mb-0" style="color:#000;font-size:35px;">insurance needs</h4>
+
+            <!-- Contact Section Form-->
+            <div class="row justify-content-center">
+                <form id="formClassify" action="/predict" method="POST">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <!-- Age input-->
+                            <div class="form-floating mb-3">
+                                <input class="form-control" id="age" type="text" name="age"
+                                    placeholder="Enter your Age..." data-sb-validations="required" />
+                                <label for="Age">Age</label>
+                            </div>
+                            <!-- Weight input-->
+                            <div class="form-floating mb-3">
+                                <input class="form-control" id="weight" name="weight" type="text"
+                                    placeholder="Enter your weight" />
+                                <label for="weight">Weight</label>
+
+                            </div>
+
+                        </div>
+                        <div class="col-md-6">
+                            <!-- Height input-->
+                            <div class="form-floating mb-3">
+                                <input class="form-control" id="height" name="height" type="text"
+                                    placeholder="Enter your height" />
+                                <label for="height">Height</label>
+                            </div>
+                            <!-- Number of Surgeries input-->
+                            <div class="form-floating mb-3">
+                                <input class="form-control" id="NS" name="ns" type="text"
+                                    placeholder="Number of surgeries had" />
+                                <label for="weight">Number of surgeries had</label>
+                            </div>
+
+                        </div>
+                        <div class="col-md-6">
+                            <!-- Diabtes input-->
+                            <div class="form-floating mb-3">
+                                <select class="form-control" name="diabetes">
+                                    <option value="1">Yes</option>
+                                    <option value="0">No</option>
+                                    <option selected value=""></option>
+                                </select>
+                                <label for="Diabetes">Are you diabetic?</label>
+                            </div>
+                            <!-- Blood Pressure Problems input-->
+                            <div class="form-floating mb-3">
+                                <select class="form-control" name="blood">
+                                    <option value="1">Yes</option>
+                                    <option value="0">No</option>
+                                    <option selected value=""></option>
+                                </select>
+                                <label for="BloodPressure">Do you have any blood pressure problems?</label>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <!-- Transplants input-->
+                            <div class="form-floating mb-3">
+                                <select class="form-control" name="transplant">
+                                    <option value="1">Yes</option>
+                                    <option value="0">No</option>
+                                    <option selected value=""></option>
+                                </select>
+                                <label for="Transplants">Do you have any transplants?</label>
+                            </div>
+                            <!-- Chronic Disease input-->
+                            <div class="form-floating mb-3">
+                                <select class="form-control" name="disease">
+                                    <option value="1">Yes</option>
+                                    <option value="0">No</option>
+                                    <option selected value=""></option>
+                                </select>
+                                <label for="ChronicDisease">Do you have any chronic disease?</label>
+                            </div>
+                        </div>
+                        <div class="row-md-6">
+                            <!-- Known allergies input-->
+                            <div class="form-floating mb-3">
+                                <select class="form-control" name="allergies">
+                                    <option value="1">Yes</option>
+                                    <option value="0">No</option>
+                                    <option selected value=""></option>
+                                </select>
+                                <label for="allergies">Do you have any known allergies?</label>
+                            </div>
+                            <!-- History of family input-->
+                            <div class="form-floating mb-3">
+                                <select class="form-control" name="cancer">
+                                    <option value="1">Yes</option>
+                                    <option value="0">No</option>
+                                    <option selected value=""></option>
+                                </select>
+                                <label for="Age">Do you have any history of cancer?</label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Submit Button-->
+                    <button class="btn btn-dark btn-xl" id="submitButton" type="submit" data-bs-toggle="modal"
+                        data-bs-target="#portfolioModal1">Submit</button>
+                </form>
+            </div>
+        </div>
+    </section>
+    <!-- Footer-->
+    <footer class="footer text-center" style="background:#FF8966;">
+        <div class="container">
+            <div class="row">
+                <!-- Footer Location-->
+                <div class="col-lg-4 mb-5 mb-lg-0">
+
+                </div>
+                <!-- Footer Social Icons-->
+                <div class="col-lg-4 mb-5 mb-lg-0">
+                    <p class="myFont">Life insurance is about taking care of your loved ones</p>
+                </div>
+                <!-- Footer About Text-->
+                <div class="col-lg-4">
+
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!-- Copyright Section-->
+    <div class="copyright py-4 text-center text-white">
+        <div class="container"><small>Copyright &copy; Andi Aliefah 2021</small></div>
+    </div>
+
+    <!-- Portfolio Modal 1-->
+    <!-- <div class="portfolio-modal modal fade" id="portfolioModal1" tabindex="-1" aria-labelledby="portfolioModal1"
+        aria-hidden="true">
+        <div class="modal-dialog modal-xl">
+            <div class="modal-content">
+                <div class="modal-header border-0"><button class="btn-close" type="button" data-bs-dismiss="modal"
+                        aria-label="Close"></button></div>
+                <div class="modal-body text-center pb-5">
+                    <div class="container">
+                        <div class="row justify-content-center">
+                            <div class="col-lg-8">
+                                <h2 class="portfolio-modal-title text-secondary text-uppercase mb-0">Result</h2>
+                                <p class="mb-4">Hi there! <br>
+                                    Your data declares that your Medical Insurance premium is
+                                </p>
+                                {%if pred%}
+                                <p>{{pred[0]}}</p>
+                                {% endif %}
+                                <button class="btn btn-primary" href="#!" data-bs-dismiss="modal">
+                                    <i class="fas fa-times fa-fw"></i>
+                                    Close Window
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div> -->
+
+    <!-- Bootstrap core JS-->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Core theme JS-->
+    <script src="{{ url_for('static', filename='js/scripts.js')}}"></script>
+    <script src="https://cdn.startbootstrap.com/sb-forms-latest.js"></script>
+</body>
+
+</html>
